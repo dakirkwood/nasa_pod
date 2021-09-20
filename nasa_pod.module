@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains nasa_astronomy_pic.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nasa_pod_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nasa_pod module.
+    case 'help.page.nasa_pod':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creates a block for NASA&#039;&#039;s astronomy picture of the day.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nasa_pod_theme() {
+  return [
+    'nasa_pod_block' => [
+      'variables' => [
+        'content' => NULL,
+        'url' => NULL,
+        'date' => NULL,
+        'explanation' => NULL,
+        'title' => NULL,
+        'media_type' => NULL,
+        'image' => NULL,
+        'video' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'nasa_pod_detail' => [
+      'variables' => [
+        'url' => NULL,
+        'date' => NULL,
+        'explanation' => NULL,
+        'media_type' => NULL,
+        'image' => NULL,
+        'video' => NULL,
+      ],
+      'render elements' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nasa_pod_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'nasa_pod/nasa_pod_library';
+}

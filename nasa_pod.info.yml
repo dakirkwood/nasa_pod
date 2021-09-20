@@ -1,0 +1,9 @@
+name: 'NASA Pic of the Day'
+type: module
+description: 'Creates a block for NASA''s astronomy picture of the day.'
+core: 8.x
+#core_version_requirement: 9.x
+package: 'UNT Campus'
+
+libraries:
+  - nasa_pod/nasa_pod_library

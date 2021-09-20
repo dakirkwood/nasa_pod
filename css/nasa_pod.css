@@ -1,0 +1,26 @@
+.nasa-pod {
+  position: relative;
+  overflow: hidden;
+}
+.pod-image {
+  position: relative;
+  overflow: hidden;
+  max-height: 30rem;
+}
+.pod-image img {
+  width: 68.625%;
+  left: 0;
+  top: 0;
+}
+.pod-explanation {
+  position: absolute;
+  right: 0;
+  width: 28%;
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  padding: 1.5rem;
+  top: 0;
+}
+.pod-explanation p {
+  color: #fff;
+}

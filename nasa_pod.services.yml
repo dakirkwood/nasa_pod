@@ -1,0 +1,8 @@
+services:
+  logger.channel.nasa_pod:
+    parent: logger.channel_base
+    arguments: ['nasa_pod']
+  nasa_client:
+    class: Drupal\nasa_pod\Service\NasaClient
+    arguments:
+      - '@http_client_factory'

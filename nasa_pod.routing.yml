@@ -1,0 +1,8 @@
+
+nasa_pod.nasa_pod_controller_showAstroPic:
+  path: 'nasa/pic-of-the-day'
+  defaults:
+    _controller: '\Drupal\nasa_pod\Controller\NasaPodController::showAstroPic'
+    _title: 'Astronomy Picture of the Day'
+  requirements:
+    _permission: 'access content'
